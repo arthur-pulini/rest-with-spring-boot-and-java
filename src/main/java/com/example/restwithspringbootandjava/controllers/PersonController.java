@@ -1,4 +1,4 @@
-package com.example.restwithspringbootandjava;
+package com.example.restwithspringbootandjava.controllers;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import com.example.restwithspringbootandjava.data.vo.v1.PersonVO;
 import com.example.restwithspringbootandjava.services.PersonServices;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 public class PersonController {
 	
 	@Autowired
@@ -40,7 +40,7 @@ public class PersonController {
 	public PersonVO create(@RequestBody PersonVO person){
 		return service.create(person);
 	}
-   
+	
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public PersonVO update(@RequestBody PersonVO person){
